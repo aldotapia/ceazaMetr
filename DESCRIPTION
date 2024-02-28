@@ -1,0 +1,27 @@
+Package: ceazaMetr
+Title: Library for calling the 'CeazaMet' API
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Aldo",
+             family = "Tapia",
+             email = "aatapia@userena.cl",
+             role = c("aut", "cre"),
+             comment = c(ORCID = "0009-0007-7041-9594")),
+      person(given = "Cristian",
+             family = "Orrego",
+             email = "cristian.orrego@ceaza.cl",
+             role = "ctb"))
+Description: Simple adn easy to use library for downloading meteorological data from <https://www.ceazamet.cl/>.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    httr,
+    jsonlite
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Url: https://github.com/aldotapia/ceazaMetr
+BugReports: https://github.com/aldotapia/ceazaMetr/issues
+
