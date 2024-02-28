@@ -1,7 +1,5 @@
-<center>
-    <img src="man/figures/logo.png">
-</center>
-----------------
+![logo](man/figures/logo.png)
+
 # ceazaMetr
 
 ## Description
@@ -40,3 +38,12 @@ getSensorData(
 ```
 
 More examples in each function documentation.
+
+### Call to inform
+
+If you are going to use this package, please register sending an email to ceazamet@ceaza.cl, with: name, email, sector, organization, use that data will have, frequency and amount of data downloaded regularly.
+
+Also, cite the source of the data in your work, for example:
+
+ - *Data provided by CEAZA through the CEAZA-Met system*
+ - *Datos provistos por CEAZA a traves del sistema CEAZA-Met*
