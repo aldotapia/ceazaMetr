@@ -33,12 +33,20 @@ A data frame with the sensors list
 This function retrieves the list of sensors for a given station, use \code{e_cod} from \code{getStationsList} to get the appropriate code for the station.
 }
 \examples{
+\dontrun{
 getSensorsList(e_cod = 9, user = "anon@host.com")
-getSensorsList(e_cod = 6, user = "anon@host.com",
-               cols = c("e_cod", "s_cod", "tf_nombre", "um_notacion",
-                        "s_altura", "s_ultima_lectura"))
+getSensorsList(
+  e_cod = 6, user = "anon@host.com",
+  cols = c(
+    "e_cod", "s_cod", "tf_nombre", "um_notacion",
+    "s_altura", "s_ultima_lectura"
+  )
+)
 getSensorsList(e_cod = 6, user = "anon@host.com", tm_cod = "ta_c")
-getSensorsList(e_cod = 6, user = "anon@host.com",
-               cols = c("e_cod", "s_cod", "tm_cod", "s_altura"))
+getSensorsList(
+  e_cod = 6, user = "anon@host.com",
+  cols = c("e_cod", "s_cod", "tm_cod", "s_altura")
+)
+}
 
 }

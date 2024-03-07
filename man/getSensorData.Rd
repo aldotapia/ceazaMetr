@@ -45,17 +45,31 @@ a data frame with the sensor data
 This functions retrieves the data series from a specific sensor in a specific time interval. The output is a data frame, although if json is asked, extra information is showed
 }
 \examples{
-getSensorData(s_cod = "RPLTA", start_date = "2012-08-20",
-              end_date = "2012-08-27", user = "anon@host.com")
-getSensorData(s_cod = "RPLTA", start_date = "2019-05-13 12:00:00",
-              end_date = "2019-05-13 15:00:00", user = "anon@host.com")
-getSensorData(s_cod = "RPLTA", start_date = "2012-08-20",
-              end_date = "2012-08-27", interv = "dia")
-getSensorData(s_cod = "RPLTA", start_date = "2016-08-20",
-              end_date = "2016-08-27", user = "anon@host.com", nan_value = 99999)
-getSensorData(s_cod = 29, start_date = "2015-08-01",
-              end_date = "2015-08-02", nan_value = '', number_format = "10.3")
-getSensorData(s_cod = 29, start_date = "2015-08-01",
-              end_date = "2015-08-02", output = "json")
+\dontrun{
+getSensorData(
+  s_cod = "RPLTA", start_date = "2012-08-20",
+  end_date = "2012-08-27", user = "anon@host.com"
+)
+getSensorData(
+  s_cod = "RPLTA", start_date = "2019-05-13 12:00:00",
+  end_date = "2019-05-13 15:00:00", user = "anon@host.com"
+)
+getSensorData(
+  s_cod = "RPLTA", start_date = "2012-08-20",
+  end_date = "2012-08-27", interv = "dia"
+)
+getSensorData(
+  s_cod = "RPLTA", start_date = "2016-08-20",
+  end_date = "2016-08-27", user = "anon@host.com", nan_value = 99999
+)
+getSensorData(
+  s_cod = 29, start_date = "2015-08-01",
+  end_date = "2015-08-02", nan_value = "", number_format = "10.3"
+)
+getSensorData(
+  s_cod = 29, start_date = "2015-08-01",
+  end_date = "2015-08-02", output = "json"
+)
+}
 
 }

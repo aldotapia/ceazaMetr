@@ -12,6 +12,7 @@
 #' @return A data frame with the sensors list
 #'
 #' @examples
+#' \dontrun{
 #' getSensorsList(e_cod = 9, user = "anon@host.com")
 #' getSensorsList(
 #'   e_cod = 6, user = "anon@host.com",
@@ -25,6 +26,7 @@
 #'   e_cod = 6, user = "anon@host.com",
 #'   cols = c("e_cod", "s_cod", "tm_cod", "s_altura")
 #' )
+#' }
 #'
 #' @export
 getSensorsList <- function(p_cod = "ceazamet",

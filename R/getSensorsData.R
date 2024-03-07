@@ -16,6 +16,7 @@
 #' @return a data frame with the sensor data
 #'
 #' @examples
+#' \dontrun{
 #' getSensorData(
 #'   s_cod = "RPLTA", start_date = "2012-08-20",
 #'   end_date = "2012-08-27", user = "anon@host.com"
@@ -40,6 +41,7 @@
 #'   s_cod = 29, start_date = "2015-08-01",
 #'   end_date = "2015-08-02", output = "json"
 #' )
+#' }
 #'
 #' @export
 getSensorData <- function(s_cod,

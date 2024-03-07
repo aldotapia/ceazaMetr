@@ -13,6 +13,7 @@
 #' @return A data frame with the stations list
 #'
 #' @examples
+#' \dontrun{
 #' getStationsList()
 #' getStationsList(geo = 1)
 #' getStationsList(user = "anon@host.com", cols = c(
@@ -24,6 +25,7 @@
 #'   p_cod = "ceazamet", e_owner = "ceaza",
 #'   user = "anon@host.com"
 #' )
+#' }
 #' @export
 getStationsList <- function(p_cod = "ceazamet",
                             e_owner = NULL,

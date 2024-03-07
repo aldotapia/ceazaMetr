@@ -36,11 +36,17 @@ A data frame with the stations list
 Get the list of stations available in the CEAZA-Met through the web service provide. Use this output (e_cod) to get sensors and data from the stations by using the \code{getSensorsList} and \code{getSensorData} functions.
 }
 \examples{
+\dontrun{
 getStationsList()
 getStationsList(geo = 1)
-getStationsList(user = "anon@host.com", cols = c("e_lat", "e_lon",
-                "e_altitud","e_ultima_lectura", "e_cod", "e_nombre",
-                "e_primera_lectura"))
-getStationsList(p_cod = "ceazamet", e_owner = "ceaza",
-                user = "anon@host.com")
+getStationsList(user = "anon@host.com", cols = c(
+  "e_lat", "e_lon",
+  "e_altitud", "e_ultima_lectura", "e_cod", "e_nombre",
+  "e_primera_lectura"
+))
+getStationsList(
+  p_cod = "ceazamet", e_owner = "ceaza",
+  user = "anon@host.com"
+)
+}
 }
