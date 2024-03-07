@@ -18,11 +18,12 @@ devtools::install_github("aldotapia/ceazaMetr")
 
 ## Usage
 
-There are 3 functions in this small package, which are:
+There are 4 functions in this small package, which are:
 
 - `getStationsList()`: Get the stations information of the CEAZA-Met network.
 - `getSensorsList()`: Get the sensors codes and metadata of the CEAZA-Met network.
 - `getSensorsData()`: Get the data serie of a specific sensor of the CEAZA-Met network.
+- `et0()`: Calculate the reference evapotranspiration (ETo) using the FAO-56 Penman-Monteith method.
 
 ### Examples
 
@@ -35,6 +36,10 @@ getSensorData(
   s_cod = "RPLTA", start_date = "2012-08-20",
   end_date = "2012-08-27", user = "anon@host.com"
 )
+et0(lat = -30, lon = -70, elev = 20,
+    month = 1, t_max = 29.6, t_min = 22.8,
+    rh_max = 90, rh_min = 70, ws_mean = 0.2,
+    sr_mean = 200)
 ```
 
 More examples in each function documentation.
