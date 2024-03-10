@@ -94,33 +94,33 @@ getSensorData <- function(s_cod,
   } else {
     cat("Advertencia: usuario no provisto\n")
     cat("Warning: user not provided\n")
-    usr <- paste0(Sys.info()[["user"]], "@noemail.com")
-    outurl <- paste(outurl, "&user=", usr, sep = "")
+    usr <- glue::glue("{Sys.info()[['user']]}@noemail.com")
+    outurl <- glue::glue("{outurl}&user={usr}")
   }
   if (!is.null(interv)) {
     if (interv %in% d_interv) {
-      outurl <- paste(outurl, "&interv=", interv, sep = "")
+      outurl <- glue::glue("{outurl}&interv={interv}")
     } else {
       stop("interv must be one of ", paste(d_interv, collapse = ", "))
     }
   }
   if (!is.null(header)) {
     if (header %in% d_header) {
-      outurl <- paste(outurl, "&encabezado=", as.numeric(header), sep = "")
+      outurl <- glue::glue("{outurl}&encabezado={as.numeric(header)}")
     } else {
       stop("header must be one of ", paste(d_header, collapse = ", "))
     }
   }
   if (!is.null(nan_value)) {
     if ((nan_value %in% d_nan_value) | (is.numeric(nan_value) & is.finite(nan_value))) {
-      outurl <- paste(outurl, "&valor_nan=", nan_value, sep = "")
+      outurl <- glue::glue("{outurl}&valor_nan={nan_value}")
     } else {
       stop("nan_value must be one of ", paste(d_nan_value, collapse = ", "))
     }
   }
   if (!is.null(output)) {
     if (output %in% d_output) {
-      outurl <- paste(outurl, "&tipo_resp=", output, sep = "")
+      outurl <- glue::glue("{outurl}&tipo_resp={output}")
     } else {
       stop("output must be one of ", paste(d_output, collapse = ", "))
     }
@@ -128,7 +128,7 @@ getSensorData <- function(s_cod,
   if (!is.null(number_format)) {
     # check if format is number.number
     if (grepl(pattern = "^\\d+\\.\\d+$", x = number_format)) {
-      outurl <- paste(outurl, "&formato_nro=", number_format, sep = "")
+      outurl <- glue::glue("{outurl}&formato_nro={number_format}")
     } else {
       stop("number_format must have number.number format like 10.3")
     }

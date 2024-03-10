@@ -67,12 +67,12 @@ getSensorsList <- function(p_cod = "ceazamet",
   } else {
     cat("Advertencia: usuario no provisto\n")
     cat("Warning: user not provided\n")
-    usr <- paste0(Sys.info()[["user"]], "@noemail.com")
-    outurl <- paste(outurl, "&user=", usr, sep = "")
+    usr <- glue::glue("{Sys.info()[['user']]}@noemail.com")
+    outurl <- glue::glue("{outurl}&user={usr}")
   }
   if (!is.null(tm_cod)) {
     if (tm_cod %in% d_tm_cod) {
-      outurl <- paste(outurl, "&tm_cod=", tm_cod, sep = "")
+      outurl <- glue::glue("{outurl}&tm_cod={tm_cod}")
     } else {
       stop("tm_cod must be one of ", paste(d_tm_cod, collapse = ", "))
     }
@@ -80,7 +80,7 @@ getSensorsList <- function(p_cod = "ceazamet",
   if (!is.null(cols)) {
     args <- paste0("c", seq(from = 0, to = length(cols) - 1, by = 1))
     for (i in seq_along(cols)) {
-      outurl <- paste(outurl, "&", args[i], "=", cols[i], sep = "")
+      outurl <- glue::glue("{outurl}&{args[i]}={cols[i]}")
     }
   }
   response <- httr::GET(outurl, httr::progress())

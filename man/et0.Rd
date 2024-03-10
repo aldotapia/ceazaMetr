@@ -45,7 +45,7 @@ et0(
 \item{user}{character, user email}
 }
 \value{
-numeric value of ET0 in mm/day
+numeric value or vector of ET0 in mm/day
 }
 \description{
 Compute evapotranspiration using the FAO-56 Penman-Monteith method

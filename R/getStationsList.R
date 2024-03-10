@@ -55,33 +55,33 @@ getStationsList <- function(p_cod = "ceazamet",
   }
 
   if (p_cod %in% d_p_cod) {
-    outurl <- paste(baseurl, "?fn=", fn, "&p_cod=", p_cod, sep = "")
+    outurl <- glue::glue("{baseurl}?fn={fn}&p_cod={p_cod}")
   } else {
     stop("p_cod must be one of ", paste(d_p_cod, collapse = ", "))
   }
   if (!is.null(e_owner)) {
     if (e_owner %in% d_e_owner) {
-      outurl <- paste(outurl, "&e_owner=", e_owner, sep = "")
+      outurl <- glue::glue("{outurl}&e_owner={e_owner}")
     } else {
       stop(paste("e_owner must be", d_e_owner))
     }
   }
   if (!is.null(e_cod)) {
-    outurl <- paste(outurl, "&e_cod=", e_cod, sep = "")
+    outurl <- glue::glue("{outurl}&e_cod={e_cod}")
   }
   if (!is.null(user)) {
-    outurl <- paste(outurl, "&user=", user, sep = "")
+    outurl <- glue::glue("{outurl}&user={user}")
   } else {
     cat("Advertencia: usuario no provisto\n")
     cat("Warning: user not provided\n")
-    usr <- paste0(Sys.info()[["user"]], "@noemail.com")
-    outurl <- paste(outurl, "&user=", usr, sep = "")
+    usr <- glue::glue("{Sys.info()[['user']]}@noemail.com")
+    outurl <- glue::glue("{outurl}&user={usr}")
   }
   if (!is.null(cols)) {
     if (all(cols %in% d_cols)) {
       args <- paste0("c", seq(from = 0, to = length(cols) - 1, by = 1))
       for (i in seq_along(cols)) {
-        outurl <- paste(outurl, "&", args[i], "=", cols[i], sep = "")
+        outurl <- glue::glue("{outurl}&{args[i]}={cols[i]}")
       }
     } else {
       stop("cols must be a subset of ", paste(d_cols, collapse = ", "))
@@ -89,7 +89,7 @@ getStationsList <- function(p_cod = "ceazamet",
   }
   if (!is.null(geo)) {
     if (all(geo %in% d_geo)) {
-      outurl <- paste(outurl, "&geo=", paste(as.numeric(geo), collapse = ""), sep = "")
+      outurl <- glue::glue("{outurl}&geo={as.numeric(geo)}")
     } else {
       stop("geo must be a subset of ", paste(d_geo, collapse = ", "))
     }
